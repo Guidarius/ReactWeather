@@ -42,11 +42,11 @@ function App() {
           <input
           type="text"
           className="search-bar"
-          placeholder="Search..."
+          placeholder="City, Country"
           onChange={e => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
-          />
+          /> 
         </div>
       
       {(typeof weather.main != "undefined") ? (
@@ -56,7 +56,8 @@ function App() {
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">
-      <div className="temp">{Math.round(weather.main.temp)}°F</div>
+          <div className="temp">{Math.round(weather.main.temp)}°F</div>
+          <div className="feels"> Feels like {Math.round(weather.main.feels_like)}°F</div>
           <div className="weather">{weather.weather[0].main}</div>
         </div>
       </div>
